@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+  	{% load static %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="{% static "carousel.css" %}" rel="stylesheet">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=f3c29e8d-4b46-4088-8cca-776031f91e3f&lang=ru_RU" type="text/javascript">
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=f3c29e8d-4b46-4088-8cca-776031f91e3f" type="text/javascript"></script>
+    <script src="placemark.js" type="text/javascript"></script>
+  <style>
+        html, body, #map {
+            width: 100%; height: 100%; padding: 0; margin: 0;
+        }
+    </style>
+    <title>{% block title %} my site {% endblock%}</title>
+  </head>
+  <body>
+  	
+    {% block head %}
+
+  	<header>
+
+  <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light"><div class="container">
+    <a class="navbar-brand d" href="#">
+      <img src="{% static "лого.svg" %}" width="147" height="50" class="a d-inline-block align-top" alt="" loading="lazy">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link nav-text" href="#1">Главная<span class="sr-only"></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-text" href="#2">Наши работы</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-text" href="#3">О нас</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-text" href="">Контакт</a>
+        </li>
+      </ul>
+      
+    </div>
+  </div>
+  </nav>
+  </header>{% endblock %}
+{% block content1 %}
+<main class="main" role = "main">
+
+	<section id="1">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        
+        <div class="container">
+          <div class="carousel-caption text-left">
+            <h1>Example headline.</h1>
+            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+            <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>Another example headline.</h1>
+            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+            <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        
+        <div class="container">
+          <div class="carousel-caption text-right">
+            <h1>One more for good measure.</h1>
+            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+            <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</section>
+
+  <!-- Marketing messaging and featurettes
+  ================================================== -->
+  <!-- Wrap the rest of the page in another container to center all the content. -->
+
+  <div id="aaa" class="container marketing">
+    <section id="2">
+    <!-- Three columns of text below the carousel -->
+    <div class="">
+    <p class="trigger-text text-center">Почему выбирают наше ателье</p>
+    <hr class="hr"></div>
+    <div class="row ec">
+      <div class="col-lg-4">
+        <img src="{% static "время.svg" %}" alt="" width="140" height="140" title="Bootstrap">
+        <h2>Короткие сроки</h2>
+        <p>Выполнение работы в заданный срок. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis delectus sed veniam exercitationem rerum dolorem ut nulla, qui iste mollitia, itaque soluta, hic velit sunt. Odit reiciendis culpa nobis reprehenderit.</p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <img src="{% static "надёжность.svg" %}" alt="" width="140" height="140" title="Bootstrap">
+        <h2>Качество</h2>
+        <p>Высокое качество изделий. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <img src="{% static "цена.svg" %}" alt="" width="140" height="140" title="Bootstrap">
+        <h2>Низкие цены</h2>
+        <p>Низкие цены по сравнению с лругими ателье. Далеко-далеко за словесными, горами в стране, гласных и согласных живут рыбные тексты. Сих его деревни свою свой встретил, путь безопасную букв они заголовок силуэт.</p>
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+    </section>
+
+    <!-- START THE FEATURETTES -->
+
+    <hr class="featurette-divider">
+    <section id="3">
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">Мы шьём одежду. <span class="text-muted">По вашим эскизам.</span></h2>
+        <p class="lead">Далеко-далеко за словесными горами в стране гласных и согласных живут, рыбные, тексты. Путь текстов семантика предупредила безопасную своих имеет точках страна там эта проектах правилами, снова, они всемогущая семь? Послушавшись, одна, пунктуация.</p>
+      </div>
+      <div class="col-md-5">
+        <img class="img-fluid" src="{% static "платья.jpg" %}" alt="a" width="445" height="695">
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading">Ремонтируем одежду. <span class="text-muted">Ремонты любой сложности.</span></h2>
+        <p class="lead">Далеко-далеко за, словесными горами в стране гласных и согласных живут, рыбные тексты. Великий использовало, страна одна большого они ему продолжил свое эта алфавит заманивший, даль необходимыми маленькая рыбными ipsum дороге предложения текста.</p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img class="img-fluid" src="{% static "ремонт.jpg" %}" alt="a" width="450" height="700">
+      </div>
+    </div>
+    </section>
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">Куклы на заказ. <span class="text-muted">Шьём кукол на заказ.</span></h2>
+        <p class="lead">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Пор, вершину сих продолжил имеет однажды. Рыбными раз пояс переписали дороге мир агентство инициал ручеек семь даль продолжил последний, правилами.</p>
+      </div>
+      <div class="col-md-5">
+        <img class="img-fluid" src="{% static "кукла.jpg" %}" alt="a" width="445" height="695">
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+{% endblock %}
+    <!-- /END THE FEATURETTES -->
+{% block content %}{% endblock %}
+  <!-- /.container -->
+  <div class="1 container">
+    <p class="trigger-text text-center">Наши контакты</p>
+    <hr class="hr">
+  <div class="ec">
+    <div class="row">
+      <div class="col-7">
+        <div id="map" style="width: 600px; height: 400px"></div>
+      </div>
+      <div class="col-3 text-center">
+        <ul class="list-group ">
+          <li class="list-group-item">Cras justo odio</li>
+          <li class="list-group-item">Dapibus ac facilisis in</li>
+          <li class="list-group-item">Morbi leo risus</li>
+          <li class="list-group-item">Porta ac consectetur ac</li>
+          <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+</div
+
+  <!-- FOOTER -->
+  <footer class="container">
+    <p class="float-right"><a href="#">Back to top</a></p>
+    <p>&copy; 2017-2020 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+  </footer>
+
+
+
+
+</main>
+  	
+
+
+
+
+  <!-- MDB core JavaScript -->
+  	
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+   jQuery(window).scroll(function(){
+         var $sections = $('section');
+  $sections.each(function(i,el){
+        var top  = $(el).offset().top-100;
+        var bottom = top +$(el).height();
+        var scroll = $(window).scrollTop();
+        var id = $(el).attr('id');
+      if( scroll > top && scroll < bottom){
+            $('.navbar-nav li').removeClass('active');
+      $('a[href="#'+id+'"]').parent().addClass('active');
+
+        }
+    })
+ });
+
+$(".navbar").on("click","a", function (event) {
+        // исключаем стандартную реакцию браузера
+        event.preventDefault();
+ 
+        // получем идентификатор блока из атрибута href
+        var id  = $(this).attr('href'),
+ 
+        // находим высоту, на которой расположен блок
+            top = $(id).offset().top;
+         
+        // анимируем переход к блоку, время: 800 мс
+        $('body,html').animate({scrollTop: top}, 800);
+    });
+
+    </script>
+    <script type="text/javascript">
+    // Функция ymaps.ready() будет вызвана, когда
+    // загрузятся все компоненты API, а также когда будет готово DOM-дерево.
+    ymaps.ready(init);
+    function init(){
+        // Создание карты.
+        var myMap = new ymaps.Map("map", {
+            // Координаты центра карты.
+            // Порядок по умолчанию: «широта, долгота».
+            // Чтобы не определять координаты центра карты вручную,
+            // воспользуйтесь инструментом Определение координат.
+            center: [53.71968443, 91.43403800],
+            // Уровень масштабирования. Допустимые значения:
+            // от 0 (весь мир) до 19.
+            zoom: 18
+        }, {
+            searchControlProvider: 'yandex#search'
+        });
+        myMap.geoObjects
+        .add(myGeoObject)
+        .add(myPieChart)
+        .add(new ymaps.Placemark([53.71968443, 91.43403800], {
+            balloonContent: 'цвет <strong>голубой</strong>',
+            iconCaption: 'Очень длиннный, но невероятно интересный текст'
+        }, {
+            preset: 'islands#blueCircleDotIconWithCaption',
+            iconCaptionMaxWidth: '50'
+        }));
+    }
+</script>
+  </body>
+</html>

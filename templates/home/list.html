@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}album{% endblock %}
+
+ 
+
+{% block content %}
+
+<script type="text/javascript">
+  
+</script>
+
+
+<div class="album py-5">
+  <div class="">
+    <p class="trigger-text text-center">Наши работы</p>
+    <hr class="hr"></div>
+	<div class="container ec">
+      <div class="row ">
+	{% for i in page_obj %}
+
+    
+
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img src="/media/{{i.img_post}}" width="100%" height="auto">
+            <div class="card-body">
+              <p class="card-text">{{i.article_title}}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a role="button" class="btn btn-sm btn-outline-secondary" href="{% url 'home:detail' i.id %}">Подробнее</a>
+                </div>
+                <small class="text-muted">{{i.pub_date}}</small>
+              </div>
+            </div>
+          </div>
+        </div>
+     
+   
+  {% endfor %}
+
+    
+
+		</div>
+    
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    {% if page_obj.has_previous %}
+        <li class="page-item">
+          <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>    
+    {% endif %}
+    
+    {%for n in page_obj.paginator.page_range%}
+
+
+        {% if page_obj.number == n %}
+
+        <li class="page-item active"><a class="page-link " href="?page={{ n }}">{{ n }}<span class="sr-only">(current)</span></a></li>
+
+        {% elif n > page_obj.number|add:-3 and n < page_obj.number|add:3%}
+
+        <li class="page-item"><a class="page-link" href="?page={{ n }}">{{ n }}</a></li>
+
+        {% endif %}
+    {%endfor%}
+    {% if page_obj.has_next %}
+           <li class="page-item">
+              <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+                  <span aria-hidden="true" >&raquo;</span>
+              </a>
+          </li> 
+    {% endif %}
+  </ul>
+</nav>
+
+
+{% endblock %}
+
+
